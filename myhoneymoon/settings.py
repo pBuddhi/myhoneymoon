@@ -1,6 +1,6 @@
 from ConfigParser import RawConfigParser
-config = RawConfigParser()
-config.read('/etc/auth_tveen/tveen_settings.ini')
+#config = RawConfigParser()
+#config.read('/etc/auth_tveen/tveen_settings.ini')
 
 PROJECT_PATH = '/var/live_code/oceana_project/oceana/'
 ENV = 'myhoneymoon'
@@ -16,13 +16,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': ENV,
-        'USER': config.get('default_database', 'DATABASE_USER'),
-        'PASSWORD': config.get('default_database', 'DATABASE_PASSWORD'),
-        'HOST': '',
-        'PORT': '',
-    }
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'planbaba',
+        'USER': 'root',
+        'PASSWORD': 'theother',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306'
+    }  
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -111,11 +111,24 @@ ROOT_URLCONF = ENV + '.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = ENV + '.wsgi.application'
 
-TEMPLATE_DIRS = (
-    PROJECT_PATH + 'templates/'
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 INSTALLED_APPS = (
+    'dummyapp',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
