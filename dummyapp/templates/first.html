@@ -16,8 +16,8 @@ woopra.call("trackForm", "Register", "#registration", {
 
 document.getElementsByTagName("button").onclick = function() {
     woopra.track("play", {
-        artist: getElementById("art_name"),
-        email: getElementById("email"),
+        artist: document.getElementById("art_name"),
+        email: document.getElementById("email"),
         //genre: "Jazz"
     });
 };
