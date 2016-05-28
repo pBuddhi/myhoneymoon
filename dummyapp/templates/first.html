@@ -10,11 +10,22 @@ woopra.config({
     domain: 'my-honeymoon.com'
 });
 woopra.track();
+woopra.call("trackForm", "Register", "#registration", {
+  exclude: ["secret"]
+});
 </script>
 <!-- End of Woopra Code -->
 </head>
 <body>
-	this is first page
+	this is first page 
 	<a href ="{% url 'secondview' %}">link to second page </a>
+	<br>
+	<form id="registration" action=".">
+		{csrf_token}
+	Full Name: <input type="text" name="fullname"><br>
+	Email: <input type="text" name="email"><br>
+	Password: <input type="password" name="password"><br>
+	Secret: <input type="text" name="secret"><br>
+</form>
 </body>
 </html>
