@@ -13,6 +13,14 @@ woopra.track();
 woopra.call("trackForm", "Register", "#registration", {
   exclude: ["secret"]
 });
+
+document.getElementById("play-button").onclick = function() {
+    woopra.track("play", {
+        artist: getElementById("art_name"),
+        email: getElementById("email"),
+        //genre: "Jazz"
+    });
+};
 </script>
 <!-- End of Woopra Code -->
 </head>
@@ -22,10 +30,12 @@ woopra.call("trackForm", "Register", "#registration", {
 	<br>
 	<form id="registration" action=".">
 		{% csrf_token %}
-	Full Name: <input type="text" name="fullname"><br>
-	Email: <input type="text" name="email"><br>
+	Full Name: <input type="text" id="art_name" name="fullname"><br>
+	Email: <input type="text" id="" name="email"><br>
 	Password: <input type="password" name="password"><br>
 	Secret: <input type="text" name="secret"><br>
+	<button id="play-button">play</button>
+
 </form>
 </body>
 </html>
