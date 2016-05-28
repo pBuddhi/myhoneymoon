@@ -14,7 +14,7 @@ woopra.call("trackForm", "Register", "#registration", {
   exclude: ["secret"]
 });
 
-document.getElementById("play-button").onclick = function() {
+document.getElementsByTagName("button").onclick = function() {
     woopra.track("play", {
         artist: getElementById("art_name"),
         email: getElementById("email"),
@@ -34,7 +34,7 @@ document.getElementById("play-button").onclick = function() {
 	Email: <input type="text" id="" name="email"><br>
 	Password: <input type="password" name="password"><br>
 	Secret: <input type="text" name="secret"><br>
-	<button id="play-button">play</button>
+	<button id="play-button" name="playbutton">play</button>
 
 </form>
 </body>
