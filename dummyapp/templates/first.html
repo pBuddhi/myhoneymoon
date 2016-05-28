@@ -15,6 +15,7 @@ woopra.call("trackForm", "Register", "#registration", {
 });
 
 document.getElementsByTagName("button").onclick = function() {
+	console.log("chal gyaa")
     woopra.track("play", {
         artist: document.getElementById("art_name"),
         email: document.getElementById("email"),
