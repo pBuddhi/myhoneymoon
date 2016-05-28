@@ -14,9 +14,17 @@ woopra.call("trackForm", "Register", "#registration", {
   exclude: ["secret"]
 });
 
-document.getElementsByTagName("button").onclick = function() {
-	console.log("chal gyaa")
-    woopra.track("play", {
+// document.getElementsByTagName("button").onclick = function() {
+// 	console.log("chal gyaa");
+//     // woopra.track("play", {
+//     //     artist: document.getElementById("art_name").value,
+//     //     email: document.getElementById("email").value,
+//     //     //genre: "Jazz"
+//     // });
+// };
+function fun(){
+	console.log("asdfhl");
+	    woopra.track("play", {
         artist: document.getElementById("art_name").value,
         email: document.getElementById("email").value,
         //genre: "Jazz"
@@ -32,10 +40,10 @@ document.getElementsByTagName("button").onclick = function() {
 <!-- 	<form id="registration" action=".">
 		{% csrf_token %} -->
 	Full Name: <input type="text" id="art_name" name="fullname"><br>
-	Email: <input type="text" id="" name="email"><br>
+	Email: <input type="text" id="email" name="email"><br>
 	Password: <input type="password" name="password"><br>
 	Secret: <input type="text" name="secret"><br>
-	<button id="play-button" name="playbutton">play</button>
+	<button id="play-button" name="playbutton" onclick="fun();">play</button>
 
 <!-- </form> -->
 </body>
