@@ -17,9 +17,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'planbaba',
-        'USER': 'root',
-        'PASSWORD': 'theother',
+        'NAME': 'database name',
+        'USER': 'user name',
+        'PASSWORD': 'user password',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306'
     }  
@@ -170,8 +170,8 @@ LOGGING = {
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'varun@tveen.in'
-EMAIL_HOST_PASSWORD = 'django123*'
+EMAIL_HOST_USER = 'email id'
+EMAIL_HOST_PASSWORD = 'password*'
 EMAIL_PORT = 587
 
 SEND_BROKEN_LINK_EMAILS = True
